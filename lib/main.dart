@@ -1,21 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:aaaqqq/pages/autorization.dart';
 
 void main() {
+
+
+
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+
   const MyApp({super.key});
 
+
+
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isSwitched = false;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
 
-      home: Scaffold(
 
 
-        appBar: AppBar(
+
+    home: Scaffold(
+        backgroundColor: Colors.teal[100],
+
+
+
+
+    appBar: AppBar(
           backgroundColor: Colors.grey,
 
             title: Center(
@@ -31,11 +52,12 @@ class MyApp extends StatelessWidget {
 
             child: Container(
               width: 350,
-              height: 250,
+              height: 450,
+
 
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: Colors.white,
+                color: Colors.teal[200],
                 border: Border.all(color: Colors.black, width: 3.0),
 
 
@@ -51,47 +73,96 @@ class MyApp extends StatelessWidget {
 
 
               Container( alignment: Alignment.topLeft,
-                      child: TextField(decoration: InputDecoration(
 
-
-                          border: InputBorder.none,
-                          hintText: "Login",
-                          fillColor: Colors.black12,
-                          filled: true
-                      ),),
 
 
                       margin: EdgeInsets.only(top: 35),
 
                       width: 325,
-                    height: 30,
+                    height: 40,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-                      color: Colors.blueGrey,
-                      border: Border.all(color: Colors.black, width: 2.0),),),
+
+                      border: Border.all(color: Colors.black, width: 2.0),),
+                child: TextField(decoration: InputDecoration(
+
+                  contentPadding: EdgeInsets.only( left: 10),
 
 
-                  Container(
-                    alignment: Alignment.topLeft,
-                    child: TextField(decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Password",
-                        fillColor: Colors.black12,
-                        filled: true
-                    ),),
+
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30)
+                    ),
+                    hintText: "Login",
+                    hintStyle: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+                    fillColor: Colors.white,
+                    filled: true
+                ),),),
 
 
-                    margin: EdgeInsets.only(top: 35),
+                  Container( alignment: Alignment.topLeft,
+
+
+
+                    margin: EdgeInsets.only(top: 35, bottom: 20),
 
                     width: 325,
-                    height: 30,
+                    height: 40,
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),
-                      color: Colors.blueGrey,
-                      border: Border.all(color: Colors.black, width: 2.0),),
+
+                      border: Border.all(color: Colors.black, width: 2.0),
+                    ),
+                    child: TextField(decoration: InputDecoration(
+
+                        contentPadding: EdgeInsets.only( left: 10),
+
+
+
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30)
+                        ),
+                        hintText: "Password",
+                        hintStyle: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+                        fillColor: Colors.white,
+                        filled: true
+                    ),),),
+
+                Align(
+
+
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 40,
+                        height: 30,
+                        margin: EdgeInsets.only(left: 15, right: 15),
+
+
+                        child:    Switch(
+                          value: isSwitched,
+                          onChanged: (value) {
+                            setState(() {
+                              isSwitched = value;
+                            });
+                          },
+                        ),
+                      ),
+                      Text("I AM NOT A ROBOT", style: TextStyle(fontWeight: FontWeight.bold),),
+                    ],
+
+
+
+
+
                   ),
-                  ElevatedButton(onPressed: () {}, child: Text('LOG IN', style:TextStyle(fontWeight: FontWeight.bold) ,))
+                ),
+
+                  ElevatedButton(onPressed: () {}, child: Text('LOG IN', style:TextStyle(fontWeight: FontWeight.bold) , ) ),
 
 
-                ],
+
+
+
+              ],
 
 
               ),
