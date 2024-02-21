@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:aaaqqq/pages/autorization.dart';
-
+import 'package:untitled42/pages/autorization.dart';
+import 'package:untitled42/pages/list.dart';
 void main() {
 
 
 
-  runApp(const MyApp());
+  runApp( MaterialApp(
+      initialRoute: '/',
+    routes: {
+
+      '/':(BuildContext context) => MyApp() ,
+      '/autorization':(BuildContext context) => Autor_zz(),
+      '/list':(BuildContext context) => Listing(),
+    }
+  ));
+
 }
 
 class MyApp extends StatefulWidget {
 
   const MyApp({super.key});
-
-
-
-
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState() => Registration();
 
 }
 
-class _MyAppState extends State<MyApp> {
+class Registration extends State<MyApp> {
   bool isSwitched = false;
   // This widget is the root of your application.
   @override
@@ -156,7 +161,15 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
 
-                  ElevatedButton(onPressed: () {}, child: Text('LOG IN', style:TextStyle(fontWeight: FontWeight.bold) , ) ),
+                  ElevatedButton(onPressed: () {Navigator.pushNamed(context, '/list');}, child: Text('LOG IN', style:TextStyle(fontWeight: FontWeight.bold) , ) ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child:  TextButton(onPressed:  () {Navigator.pushNamed(context, '/autorization');}, child:
+                    Text('Have an account? Sign in->',
+                      style: TextStyle(color: Colors.deepPurple),)),
+
+                  )
+
 
 
 
