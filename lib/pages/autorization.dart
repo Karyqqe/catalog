@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 class Autor_zz extends StatefulWidget {
-
-
   @override
   State<Autor_zz> createState() => Autorization();
 

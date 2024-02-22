@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled42/pages/autorization.dart';
+import 'package:untitled42/pages/cards.dart';
 import 'package:untitled42/pages/list.dart';
 void main() {
 
@@ -11,7 +12,7 @@ void main() {
 
       '/':(BuildContext context) => MyApp() ,
       '/autorization':(BuildContext context) => Autor_zz(),
-      '/list':(BuildContext context) => Listing(),
+      '/list':(BuildContext context) => ProductListScreen_zz(),
     }
   ));
 
